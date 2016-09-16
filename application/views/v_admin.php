@@ -52,7 +52,7 @@
             <h1 class="page-header">UPLOAD PHOTOS</h1>
           </div>
 
-          <form class="form-group " role=”form“ action="#" method="post" enctype="multipart/form-data">
+          <form class="form-group " role=”form“ action="<?php echo base_url();?>index.php/labtigramoler/uploadphotocontroller" method="post" enctype="multipart/form-data">
 
             <div class="form-group row ">
               <label for="example-text-input" class="col-xs-2 col-form-label">Nama Photo</label>
@@ -68,12 +68,12 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
               <div class="col-xs-10">
                 <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input" name="emailphoto">
               </div>
-            </div>
+            </div> -->
 
             <div class="form-group row">
               <label for="example-url-input" class="col-xs-2 col-form-label">Social Media</label>
