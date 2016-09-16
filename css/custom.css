@@ -1,0 +1,52 @@
+#jdllabtigram{
+
+      color: #000000;
+      shape-inside: auto;
+      font-size: 15dp;
+      box-shadow: 2px;
+      border-style: groove;
+      list-inline:2px;
+      font-family: fantasy;
+      flex-direction: column-reverse;
+
+}
+
+#navbardefault{
+
+      background: #8C8EEF	;
+
+
+}
+
+#dboard
+{
+
+      color: #ffffff	;
+      font-size: 10pt;
+
+}
+
+#admin
+{
+
+     color: #ffffff	;
+
+     font-size: 10pt;
+}
+
+
+#dboard:hover
+{
+
+      color: #ffffff	;
+      font-size: 20pt;
+
+}
+
+#admin:hover
+{
+
+     color: #ffffff	;
+
+     font-size: 20pt;
+}
