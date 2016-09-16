@@ -14,38 +14,59 @@ class Labtigramoler extends CI_Controller {
 	}
 
 	public function admin(){
+
 			$this->load->view('v_admin');
 
 	}
 
 	public function login(){
+		if($this->session->userdata('validamin')){
+
+			redirect('labtigramoler/admin');
+		}
+		else
+		{
 
 			$this->load->view('v_login');
+
+		}
+
+	}
+
+	public function testsession(){
+
+
+				$data = $this->session->userdata('validamin');
+				echo json_encode($data);
+
+	}
+
+	public function showdata(){
+
+		$this->load->view('v_tablemin');
 
 	}
 
 	function aksi_login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$where = array(
+		$sess_array = array(
 			'username' => $username,
-			'password' => $password
+			'password' => $password,
+			'validamin' => true
 			);
-		$cek = $this->m_login->cek_login("admin",$where)->num_rows();
-		if($cek > 0){
 
-			$data_session = array(
-				'nama' => $username,
-				'status' => "login"
-				);
+		$cek = $this->labtigramodel->checklogin($username,$password);
 
-			$this->session->set_userdata($data_session);
-
-			redirect(base_url("admin"));
-
-		}else{
-			echo "Username dan password salah !";
+	 	if ($cek !=NULL) {
+			  	$this->session->set_userdata('logged_in', $sess_array);
+					redirect('labtigramoler/admin');
 		}
+		else
+		{
+				  redirect('labtigramoler/login');
+		}
+
 	}
 
 	public function uploadphotocontroller(){
@@ -71,6 +92,12 @@ class Labtigramoler extends CI_Controller {
 	}
 
 }
+
+	public function logout(){
+
+				$this->session->sess_destroy();
+				redirect('labtigramoler/login');
+	}
 }
 
 /* End of file welcome.php */

@@ -21,7 +21,8 @@
         <h1 class="text-center login-title" id="labtigramlogin">LABTIGRAM</h1>
         <div class="account-wall ">
           <img class="profile-img" src="<?php echo base_url();?>photosfolder/labtigram.png" alt="Labtigram Logos">
-          <form class="form-signin">
+
+          <form class="form-signin" method="post" action="<?php echo base_url();?>index.php/labtigramoler/aksi_login">
             <input type="text" class="form-control" placeholder="Username" required autofocus name="username">
             <input type="password" class="form-control" placeholder="Password" required name="password">
             <button class="btn btn-lg btn-primary btn-block" type="submit">

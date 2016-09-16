@@ -35,6 +35,7 @@
             <ul class="nav navbar-nav">
               <li class="panel-default"><a href="#" id="dboard">Dashboard</a></li>
               <li class=""><a href="#" id="admin">Admin</a></li>
+              <li class=""><a href="<?php echo base_url();?>index.php/labtigramoler/logout" id="admin">Logout</a></li>
 
 
             </ul>
