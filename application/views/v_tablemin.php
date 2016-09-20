@@ -60,20 +60,23 @@
             </tr>
           </thead>
           <tbody>
+          <?php foreach ($photoslab as $itemphoto  ) {
+            # code...
+           ?>
             <tr class="success">
-              <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-              <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-              <td>john@example.com</td>
+              <td><?php echo $itemphoto->id_photos;?></td>
+              <td><?php echo $itemphoto->id_photos;?></td>
+              <td><?php echo $itemphoto->id_photos;?></td>
+              <td><?php echo $itemphoto->id_photos;?></td>
+              <td><?php echo $itemphoto->id_photos;?></td>
+              <td><?php echo $itemphoto->id_photos;?></td>
+              <td><?php echo $itemphoto->id_photos;?></td>
                  <td>
                 <a class="btn-sm btn-primary" href="#">EDIT</a>
                 <a class="btn-sm btn-danger" href="#">DELETE</a>
               </td>
             </tr>
-
+          <?php }?>
           </tbody>
         </table>
 

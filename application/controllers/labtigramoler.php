@@ -13,6 +13,11 @@ class Labtigramoler extends CI_Controller {
 		$this->load->view('v_home');
 	}
 
+	public function sayhello(){
+
+			echo "Hello Gundar";
+	}
+
 	public function admin(){
 
 			$this->load->view('v_admin');
@@ -42,8 +47,8 @@ class Labtigramoler extends CI_Controller {
 	}
 
 	public function showdata(){
-
-		$this->load->view('v_tablemin');
+		$data['photoslab'] = $this->labtigramodel->get_data_photos_model();
+		$this->load->view('v_tablemin', $data);
 
 	}
 
@@ -71,13 +76,14 @@ class Labtigramoler extends CI_Controller {
 
 	public function uploadphotocontroller(){
 			$config['upload_path'] = './photosfolder';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png|pdf';
+			$config['allowed_types'] = 'gif|jpg|jpeg|png';
 			$config['max_size'] = '5000';
 			$this->load->library('upload', $config);
 			if ( ! $this->upload->do_upload('fileupload')) {
 					echo $this->upload->display_errors();
 
-			} else
+			}
+			else
 			{
 			//here $file_data receives an array that has all the info
 			//pertaining to the upload, including 'file_name'
@@ -86,12 +92,11 @@ class Labtigramoler extends CI_Controller {
 				$filenamepass = $file_data['file_name'];
 
 				$this->labtigramodel->uploadphotomodel($filenamepass);
-
-
-
-	}
+				redirect('labtigramoler/showdata');
+			}
 
 }
+
 
 	public function logout(){
 

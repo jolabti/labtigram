@@ -34,6 +34,13 @@ class Labtigramodel extends CI_Model {
 
 	}
 
+	public function get_data_photos_model(){
+
+			$query = $this->db->get('photos');
+			return $query->result();
+
+	}
+
 	public function checklogin($username,$password){
 				$this->db->where('username', $username);
 				$this->db->where('password', $password);
