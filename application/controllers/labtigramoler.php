@@ -52,9 +52,17 @@ class Labtigramoler extends CI_Controller {
 
 	}
 
+	public function editdata($idphotos){
+		$data['photoslab'] = $this->labtigramodel->get_edit_photos_model($idphotos);
+		$this->load->view('v_admin_update', $data);
+	}
+
 	function aksi_login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
+
+
+
 		$sess_array = array(
 			'username' => $username,
 			'password' => $password,
@@ -69,7 +77,12 @@ class Labtigramoler extends CI_Controller {
 		}
 		else
 		{
-				  redirect('labtigramoler/login');
+
+					echo "<script>";
+					echo "alert('Pastikan Authentikasi Benar')";
+					echo "</script>";
+					$this->load->view('v_login');
+					//redirect('labtigramoler/login');
 		}
 
 	}

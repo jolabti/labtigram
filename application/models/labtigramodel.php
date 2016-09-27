@@ -41,6 +41,23 @@ class Labtigramodel extends CI_Model {
 
 	}
 
+	public function get_edit_photos_model($idphotos){
+		 $this->db->where('id_photos', $idphotos);
+		 $kueri = $this->db->get('photos');
+		 return $kueri->result();
+	}
+
+	public function set_update_photos_model(){
+
+		$namaphoto = $this->input->post('namaphoto');
+		$ttlphoto = $this->input->post('ttlphoto');
+		//$emailphoto = $this->input->post('emailphoto');
+		$socmedphoto = $this->input->post('socmedphoto');
+		$telponphoto = $this->input->post('telponphoto');
+		$angkatanphoto = $this->input->post('angkatanphoto');
+
+	}
+
 	public function checklogin($username,$password){
 				$this->db->where('username', $username);
 				$this->db->where('password', $password);

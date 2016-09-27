@@ -23,7 +23,12 @@
           <img class="profile-img" src="<?php echo base_url();?>photosfolder/labtigram.png" alt="Labtigram Logos">
 
           <form class="form-signin" method="post" action="<?php echo base_url();?>index.php/labtigramoler/aksi_login">
-            <input type="text" class="form-control" placeholder="Username" required autofocus name="username">
+          <div class="badges error">
+            <span><?php echo validation_errors(); ?>
+           </span>
+          </div>
+
+             <input type="text" class="form-control" placeholder="Username" required autofocus name="username">
             <input type="password" class="form-control" placeholder="Password" required name="password">
             <button class="btn btn-lg btn-primary btn-block" type="submit">
               Sign in

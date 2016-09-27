@@ -45,7 +45,7 @@
       </nav>
 
       <div class="container">
-        <table class="table">
+        <table class="table responsive">
           <thead>
             <tr>
               <th>ID PHOTO</th>
@@ -65,14 +65,14 @@
            ?>
             <tr class="success">
               <td><?php echo $itemphoto->id_photos;?></td>
-              <td><?php echo $itemphoto->id_photos;?></td>
-              <td><?php echo $itemphoto->id_photos;?></td>
-              <td><?php echo $itemphoto->id_photos;?></td>
-              <td><?php echo $itemphoto->id_photos;?></td>
-              <td><?php echo $itemphoto->id_photos;?></td>
-              <td><?php echo $itemphoto->id_photos;?></td>
+              <td><?php echo $itemphoto->nama_photo;?></td>
+              <td><?php echo $itemphoto->ttl;?></td>
+              <td><a class="link" href="<?php echo $itemphoto->socmed;?>"/><?php echo $itemphoto->socmed;?></td>
+              <td><?php echo $itemphoto->telpon;?></td>
+              <td><?php echo $itemphoto->angkatan;?></td>
+              <td><img class="img-responsive" src="<?php echo base_url();?>photosfolder/<?php echo $itemphoto->urlphoto;?>">    </td>
                  <td>
-                <a class="btn-sm btn-primary" href="#">EDIT</a>
+                <a class="btn-sm btn-primary" href="<?php echo base_url();?>index.php/labtigramoler/editdata/<?php echo $itemphoto->id_photos;?>">Choosen</a>
                 <a class="btn-sm btn-danger" href="#">DELETE</a>
               </td>
             </tr>

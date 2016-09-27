@@ -48,7 +48,9 @@
 
 
         <div class="row ">
- 
+          <?php foreach ($photoslab as $itemdata ) {
+            # code...
+           ?>
           <div class="col-lg-12">
             <h1 class="page-header">UPLOAD PHOTOS</h1>
           </div>
@@ -58,14 +60,14 @@
             <div class="form-group row ">
               <label for="example-text-input" class="col-xs-2 col-form-label">Nama Photo</label>
               <div class="col-xs-10">
-                <input class="form-control" type="text"   id="example-text-input" name="namaphoto">
+                <input class="form-control" type="text" placeholder="<?php echo $itemdata->nama_photo;?>" id="example-text-input" name="namaphoto">
               </div>
             </div>
 
             <div class="form-group row">
               <label  class="col-xs-2 col-form-label">TTL</label>
               <div class="col-xs-10">
-                <input class="form-control" type="date" name="ttlphoto"  >
+                <input class="form-control" type="date" name="ttlphoto" value="<?php echo $itemdata->ttl;?>">
               </div>
             </div>
 
@@ -80,21 +82,21 @@
 
               <label for="example-url-input" class="col-xs-2 col-form-label">Social Media</label>
               <div class="col-xs-10">
-                <input class="form-control" type="url"  id="example-url-input" name="socmedphoto" >
+                <input class="form-control" type="url"  id="example-url-input" name="socmedphoto" value="<?php echo $itemdata->socmed;?>">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
               <div class="col-xs-10">
-                <input class="form-control" type="tel"   id="example-tel-input" name="telponphoto">
+                <input class="form-control" type="tel" value="<?php echo $itemdata->telpon; ?>" id="example-tel-input" name="telponphoto">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="example-password-input" class="col-xs-2 col-form-label">Angkatan</label>
               <div class="col-xs-10">
-                <input class="form-control" type="text"   id="example-password-input" name="angkatanphoto">
+                <input class="form-control" type="text" placeholder="<?php echo $itemdata->angkatan; ?>" id="example-password-input" name="angkatanphoto">
               </div>
             </div>
 
@@ -107,7 +109,7 @@
 
             <input type="submit" class="btn-lg btn-primary" value="UPLOAD" name="uploadklik">
 
-
+            <?php } ?>
 
           </form>
 
