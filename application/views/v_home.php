@@ -50,8 +50,18 @@
           <div class="col-lg-12">
             <h1 class="page-header">Asistant Photos</h1>
           </div>
-
+          <?php foreach ($photoslab as $photohome ) {
+            # code...
+           ?>
           <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a href="#" class="btn-sm btn-success">Like</a>
+            <a class="thumbnail" href="#">
+              <img class="img-responsive" src="<?php echo base_url();?>photosfolder/<?php echo $photohome->urlphoto;?>" alt="">
+            </a>
+            <span><b>NAMA : <?php echo $photohome->nama_photo; ?></b></span>
+          </div>
+          <?php } ?>
+          <!-- <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <a href="#" class="btn-sm btn-success">Like</a>
             <a class="thumbnail" href="#">
               <img class="img-responsive" src="http://placehold.it/400x300" alt="">
@@ -126,14 +136,7 @@
             <a class="thumbnail" href="#">
               <img class="img-responsive" src="http://placehold.it/400x300" alt="">
             </a>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a href="#" class="btn-sm btn-success">Like</a>
-            <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-          </div>
+          </div> -->
 
         </div>
 

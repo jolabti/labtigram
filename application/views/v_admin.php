@@ -33,7 +33,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="panel-default"><a href="#" id="dboard">Dashboard</a></li>
+              <li class="panel-default"><a href="<?php echo base_url();?>index.php/labtigramoler/showdata" id="dboard">Dashboard</a></li>
               <li class=""><a href="#" id="admin">Admin</a></li>
               <li class=""><a href="<?php echo base_url();?>index.php/labtigramoler/logout" id="admin">Logout</a></li>
 
@@ -48,7 +48,7 @@
 
 
         <div class="row ">
- 
+
           <div class="col-lg-12">
             <h1 class="page-header">UPLOAD PHOTOS</h1>
           </div>

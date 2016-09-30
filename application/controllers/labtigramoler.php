@@ -10,7 +10,8 @@ class Labtigramoler extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('v_home');
+		$data['photoslab'] = $this->labtigramodel->get_data_photos_model();
+		$this->load->view('v_home', $data);
 	}
 
 	public function sayhello(){
@@ -57,6 +58,16 @@ class Labtigramoler extends CI_Controller {
 		$this->load->view('v_admin_update', $data);
 	}
 
+	public function updatedata($idphotos){
+		 $aksi= $this->labtigramodel->update_model($idphotos);
+
+			if ($aksi==TRUE){
+				echo "<script>";
+				echo "alert('UPDATE CLEAR')";
+				echo "</script>";
+			}
+	}
+
 	function aksi_login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
@@ -78,7 +89,7 @@ class Labtigramoler extends CI_Controller {
 		else
 		{
 
-					echo "<script>";
+								echo "<script>";
 					echo "alert('Pastikan Authentikasi Benar')";
 					echo "</script>";
 					$this->load->view('v_login');

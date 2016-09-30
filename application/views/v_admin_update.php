@@ -55,7 +55,7 @@
             <h1 class="page-header">UPLOAD PHOTOS</h1>
           </div>
 
-          <form class="form-group " role=”form“ action="<?php echo base_url();?>index.php/labtigramoler/uploadphotocontroller" method="post" enctype="multipart/form-data">
+          <form class="form-group " role=”form“ action="<?php echo base_url();?>index.php/labtigramoler/updatedata/<?php echo $itemdata->id_photos;?>" method="post" enctype="multipart/form-data">
 
             <div class="form-group row ">
               <label for="example-text-input" class="col-xs-2 col-form-label">Nama Photo</label>
@@ -104,10 +104,13 @@
               <label for="example-password-input" class="col-xs-2 col-form-label">Photo Unggahan</label>
               <div class="col-xs-10">
                 <input class="form-control" type="file"   name="fileupload">
-              </div>
+
+                <span class="displaybefore">Before: <img src="<?php echo base_url();?>photosfolder/<?php echo $itemdata->urlphoto;?>" class="img-responsive"  id="photos"/></span>
+                <a href="#" class="btn-sm warning" id="hdphoto">SHOW/HIDE</a>
+                </div>
             </div>
 
-            <input type="submit" class="btn-lg btn-primary" value="UPLOAD" name="uploadklik">
+            <input type="submit" class="btn-lg btn-primary" value="UPDATE" name="uploadklik">
 
             <?php } ?>
 
@@ -131,6 +134,8 @@
 
 
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery.js">
+</script>
+<script type="text/javascript" src="<?php echo base_url();?>js/custom.js">
 </script>
 <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.js">
 </script>
