@@ -59,14 +59,28 @@ class Labtigramoler extends CI_Controller {
 	}
 
 	public function updatedata($idphotos){
-		 $aksi= $this->labtigramodel->update_model($idphotos);
+		 //$aksi=
+		 $config['upload_path'] = './photosfolder';
+		 $config['allowed_types'] = 'gif|jpg|jpeg|png';
+		 $config['max_size'] = '5000';
+		 $this->load->library('upload', $config);
+		 if ( ! $this->upload->do_upload('fileupload')) {
+				 echo $this->upload->display_errors();
 
-			if ($aksi==TRUE){
-				echo "<script>";
-				echo "alert('UPDATE CLEAR')";
-				echo "</script>";
-			}
-	}
+		 }
+		 else
+		 {
+		 //here $file_data receives an array that has all the info
+		 //pertaining to the upload, including 'file_name'
+
+			 $file_data = $this->upload->data();
+			 $filenamepass = $file_data['file_name'];
+
+			 $this->labtigramodel->update_model($idphotos,$filenamepass);
+			 redirect('labtigramoler/showdata');
+		 }
+
+ 	}
 
 	function aksi_login(){
 		$username = $this->input->post('username');
