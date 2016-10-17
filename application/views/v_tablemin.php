@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.css" />
   <link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap-theme.css" />
+  <link rel="stylesheet" href="<?php echo base_url();?>css/sweetalert/sweetalert.css" />
   <link rel="stylesheet" href="<?php echo base_url();?>css/custom.css" />
 
 </head>
@@ -92,6 +93,9 @@
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery.js">
 </script>
 <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.js">
+</script>
+
+<script type="text/javascript" src="<?php echo base_url();?>js/sweetalert/sweetalert.min.js">
 </script>
 
 </html>

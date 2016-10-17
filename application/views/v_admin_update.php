@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.css" />
   <link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap-theme.css" />
+  <link rel="stylesheet" href="<?php echo base_url();?>js/sweetalert/sweetalert.css" />
+  <link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap-theme.css" />
   <link rel="stylesheet" href="<?php echo base_url();?>css/custom.css" />
 
 </head>
@@ -87,7 +89,7 @@
             </div>
 
             <div class="form-group row">
-              <label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
+              <label for="example-tel-input" class="col-labtigram/xs-2 col-form-label">Telephone</label>
               <div class="col-xs-10">
                 <input class="form-control" type="tel" value="<?php echo $itemdata->telpon; ?>" id="example-tel-input" name="telponphoto">
               </div>
@@ -110,7 +112,7 @@
                 </div>
             </div>
 
-            <input type="submit" class="btn-lg btn-primary" value="UPDATE" name="uploadklik">
+            <input type="submit" class="btn-lg btn-primary" value="UPDATE" name="uploadklik" id="updatebutton">
 
             <?php } ?>
 
@@ -133,11 +135,15 @@
 
 
 
-<script type="text/javascript" src="<?php echo base_url();?>js/jquery.js">
-</script>
-<script type="text/javascript" src="<?php echo base_url();?>js/custom.js">
+<<script type="text/javascript" src="<?php echo base_url();?>js/jquery.js">
 </script>
 <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.js">
+</script>
+
+<script type="text/javascript" src="<?php echo base_url();?>js/sweetalert/sweetalert.min.js">
+</script>
+
+<script type="text/javascript" src="<?php echo base_url();?>js/custom.js">
 </script>
 
 </html>

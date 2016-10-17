@@ -15,32 +15,25 @@ class Labtigramoler extends CI_Controller {
 	}
 
 	public function sayhello(){
-
 			echo "Hello Gundar";
 	}
 
 	public function admin(){
-
 			$this->load->view('v_admin');
-
 	}
 
 	public function login(){
-		if($this->session->userdata('validamin')){
-
+				if($this->session->userdata('validamin')){
 			redirect('labtigramoler/admin');
 		}
 		else
 		{
-
 			$this->load->view('v_login');
-
 		}
 
 	}
 
 	public function testsession(){
-
 
 				$data = $this->session->userdata('validamin');
 				echo json_encode($data);
@@ -54,12 +47,12 @@ class Labtigramoler extends CI_Controller {
 	}
 
 	public function editdata($idphotos){
-		$data['photoslab'] = $this->labtigramodel->get_edit_photos_model($idphotos);
+				$data['photoslab'] = $this->labtigramodel->get_edit_photos_model($idphotos);
 		$this->load->view('v_admin_update', $data);
 	}
 
-	public function updatedata($idphotos){
-		 //$aksi=
+	public function updatedata($idphotos){		 //$aksi=
+
 		 $config['upload_path'] = './photosfolder';
 		 $config['allowed_types'] = 'gif|jpg|jpeg|png';
 		 $config['max_size'] = '5000';
@@ -77,6 +70,7 @@ class Labtigramoler extends CI_Controller {
 			 $filenamepass = $file_data['file_name'];
 
 			 $this->labtigramodel->update_model($idphotos,$filenamepass);
+
 			 redirect('labtigramoler/showdata');
 		 }
 
@@ -85,9 +79,6 @@ class Labtigramoler extends CI_Controller {
 	function aksi_login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-
-
-
 		$sess_array = array(
 			'username' => $username,
 			'password' => $password,
@@ -103,7 +94,7 @@ class Labtigramoler extends CI_Controller {
 		else
 		{
 
-								echo "<script>";
+					echo "<script>";
 					echo "alert('Pastikan Authentikasi Benar')";
 					echo "</script>";
 					$this->load->view('v_login');
